@@ -26,11 +26,14 @@ We can go even further, taking the second derivative:
 As we can see, the first derivative has a peak at the edge and the second derivative has a zero crossing at the edge. The question is how do we find the derivative? To approximate it we'll use the [Taylor series](https://en.wikipedia.org/wiki/Taylor_series):
 $$f(x + \Delta x) = f(x) + \frac{\Delta x}{1!}f'(x) + \frac{(\Delta x)^2}{2!}f''(x) + \ldots$$
 
-In our case the step is $\Delta x = \plusmn 1$
+In our case the step is $\Delta x = \plusmn 1$.
+
 For $\Delta x = 1$ we get the forward difference:
 $$f'(x) = f(x + 1) - f(x)$$
+
 For $\Delta x = -1$ we get the backward difference:
 $$f'(x) = f(x) - f(x - 1)$$
+
 Adding theese equations we get the cental difference:
 $$f'(x) = \frac{f(x + 1) - f(x - 1)}{2}$$
 
@@ -39,12 +42,7 @@ For the second order derivative $f''(x)$ we get:
 * Backward difference: $f''(x) = 2(f(x - 1) - f(x) + f'(x))$
 
 Adding theese we get:
-$$
-\begin{split}
-    f''(x) & = f(x + 1) - f(x) - f'(x) + f(x - 1) - f(x) + f'(x) \\
-           & = f(x + 1) - 2f(x) + f(x - 1)
-\end{split}
-$$
+$$\begin{split}f''(x) & = f(x + 1) - f(x) - f'(x) + f(x - 1) - f(x) + f'(x) \\ & = f(x + 1) - 2f(x) + f(x - 1)\end{split}$$
 
 ---
 Similarly we can calculate the first and second order partial derivatives of the function $f(x, y)$:

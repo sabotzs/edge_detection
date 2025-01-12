@@ -27,12 +27,8 @@ As we can see, the first derivative has a peak at the edge and the second deriva
 $$f(x + \Delta x) = f(x) + \frac{\Delta x}{1!}f'(x) + \frac{(\Delta x)^2}{2!}f''(x) + \ldots$$
 
 In our case the step is $\Delta x = \plusmn 1$.
-
-For $\Delta x = 1$ we get the forward difference:
-$$f'(x) = f(x + 1) - f(x)$$
-
-For $\Delta x = -1$ we get the backward difference:
-$$f'(x) = f(x) - f(x - 1)$$
+* For $\Delta x = 1$ we get the forward difference: $f'(x) = f(x + 1) - f(x)$
+* For $\Delta x = -1$ we get the backward difference: $f'(x) = f(x) - f(x - 1)$
 
 Adding theese equations we get the cental difference:
 $$f'(x) = \frac{f(x + 1) - f(x - 1)}{2}$$
@@ -42,7 +38,7 @@ For the second order derivative $f''(x)$ we get:
 * Backward difference: $f''(x) = 2(f(x - 1) - f(x) + f'(x))$
 
 Adding theese we get:
-$$\begin{split}f''(x) & = f(x + 1) - f(x) - f'(x) + f(x - 1) - f(x) + f'(x) \\ & = f(x + 1) - 2f(x) + f(x - 1)\end{split}$$
+$$ \begin{split} f''(x) & = f(x + 1) - f(x) - f'(x) + f(x - 1) - f(x) + f'(x) \\ & = f(x + 1) - 2f(x) + f(x - 1) \end{split} $$
 
 ---
 Similarly we can calculate the first and second order partial derivatives of the function $f(x, y)$:
@@ -51,8 +47,7 @@ Similarly we can calculate the first and second order partial derivatives of the
 * $f''_{xx}(x, y) = f(x + 1, y) - 2f(x, y) +f(x - 1, y)$
 * $f''_{yy}(x, y) = f(x, y + 1) - 2f(x, y) +f(x, y - 1)$
 
-Now that we've calculated the second order partial derivatives, we can use them to calculate the [Laplacian](https://en.wikipedia.org/wiki/Laplace_operator):
-$$\nabla^2f(x, y) = f''_{xx}(x, y) + f''_{yy}(x, y) = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y)$$
+Now that we've calculated the second order partial derivatives, we can use them to calculate the [Laplacian](https://en.wikipedia.org/wiki/Laplace_operator): $\nabla^2f(x, y) = f''_{xx}(x, y) + f''_{yy}(x, y) = f(x + 1, y) + f(x - 1, y) + f(x, y + 1) + f(x, y - 1) - 4f(x, y)$
 
 [Gradient](https://en.wikipedia.org/wiki/Gradient) of function $f(x, y)$ at point $(x_0, y_0)$ is vector:
 $$

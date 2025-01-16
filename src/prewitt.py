@@ -10,7 +10,7 @@ def prewitt(image: np.ndarray[np.uint8], direction: EdgeDetectDirection) -> np.n
         mask = np.array([[1, 0, -1], [1, 0, -1], [1, 0, -1]], dtype=np.float32)
     else:
         mask = np.array([[1, 1, 1], [0, 0, 0], [-1, -1, -1]], dtype=np.float32)
-    mask = (1/6) * mask
+    mask = 0.166 * mask
 
     for row in range(1, rows - 1):
         for col in range(1, cols - 1):
